@@ -1,0 +1,61 @@
+.bg-light {
+    background-color:#000 !important;
+}
+
+ul li.active a{
+    background: #fff;
+    color: #000 !important;
+}
+
+ul li a{
+    background: #000;
+    color: #fff !important;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+div.stats{
+    margin:0.8em;
+}
+span.market{
+    display:inline-block;
+    height:auto;
+    width:60%;
+    margin-left:18%;
+    margin-top:3em;
+    border:1px solid #000;
+}
+
+table.table-dark tr{
+    text-align:center;
+    color:black;
+    background:#fff;
+}
+.table-dark td{
+    border:none;
+}
+tr.table-head{
+    background:#000 !important;
+    color:#fff !important;
+}
+
+
+div.stock-turn{
+    padding:1em;
+    border-top: 1px solid #000;
+}
+.alignleft {
+	float: left;
+	margin-left:7em;
+}
+.alignright {
+	float: right;
+	margin-right:5em;
+}
+
+footer{
+    margin-top:50em;
+}
+
