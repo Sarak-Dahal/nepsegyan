@@ -1,110 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Nepse Gyan - Prediction</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% extends 'layout.html' %}
 
-</head>
-<body>
-    <form class="form-inline mr-auto" action="/predict" method="post">
-        <input name="symbol" class="form-control mr-sm-2" type="text" placeholder="Stock Symbol" aria-label="Predict" style="width:30%;margin-left:30%;">
-        <button class="btn btn-success" type="submit">Predict</button>
-    </form>
-    <div>
-        <span class="border border-success">
-            <img src="{{ stockImage }}" class="img-fluid" alt="Responsive image">
-        </span>
-    </div>
+{% block content %}
+<div class="pred">
+    <form class="form-inline mr-auto" action="/predict" method="post" style="text-tranform:uppercase">
+    <input name="symbol" class="form-control mr-sm-2 text-uppercase" type="text" placeholder="Stock Symbol" aria-label="Predict" style="width:30%;margin-left:30%;">
+    <button class="btn btn-success" type="submit">Predict</button>
+</form>
+</div>
 
-    <div class="entire-cards" style="margin:5em;">
-        <div class="card-deck" style="padding:2em;">
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
+<div>
+    <span class="border border-success">
+        <img src="{{ stockImage }}" class="img-fluid" alt="Responsive image">
+    </span>
+</div>
+
+<div class="entire-cards" style="margin:5em;">
+    <div class="card-deck" style="padding:2em;">
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">{{ sign }}</h1><br>
+              <h4 class="card-text text-center">Symbol</h4>
             </div>
         </div>
-
-        <div class="card-deck" style="padding:2em;">
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. {{ opn }}</h1><br>
+              <h4 class="card-text text-center">Open Price</h4>
             </div>
         </div>
-
-        <div class="card-deck" style="padding:2em;">
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. {{ high }}</h1><br>
+              <h4 class="card-text text-center">High Price</h4>
             </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
-            </div>
-            <div class="card border border-success">
-                <div class="card-body">
-                  <h1 class="card-title text-center">Rs. 2000</h1><br>
-                  <h4 class="card-text text-center">Open Price</h4>
-                </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. {{ low }}</h1><br>
+              <h4 class="card-text text-center">Low Price</h4>
             </div>
         </div>
     </div>
 
-    <div class="suggest text-center">
-        <h1>Suggestion: Buy</h1>
+    <div class="card-deck" style="padding:2em;">
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">{{ ltp }}</h1><br>
+              <h4 class="card-text text-center">Last Traded Price</h4>
+            </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">{{ ltv }}</h1><br>
+              <h4 class="card-text text-center">Last Traded Volume</h4>
+            </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">{{ change }}</h1><br>
+              <h4 class="card-text text-center">% Change</h4>
+            </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">{{ quantity }}</h1><br>
+              <h4 class="card-text text-center">Quantity</h4>
+            </div>
+        </div>
     </div>
 
-</body>
-</html>
+    <div class="card-deck" style="padding:2em;">
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. {{ predi }}</h1><br>
+              <h4 class="card-text text-center">Price after a Day</h4>
+            </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. 2000</h1><br>
+              <h4 class="card-text text-center">Price after a Week</h4>
+            </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. 2000</h1><br>
+              <h4 class="card-text text-center">Price after a Month</h4>
+            </div>
+        </div>
+        <div class="card border border-success">
+            <div class="card-body">
+              <h1 class="card-title text-center">Rs. 2000</h1><br>
+              <h4 class="card-text text-center">Price after a Year</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="suggest text-center">
+    <h1>Suggestion: Buy</h1>
+</div>
+
+{% endblock %}

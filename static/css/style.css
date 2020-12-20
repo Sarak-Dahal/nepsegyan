@@ -1,0 +1,28 @@
+.bg-light {
+    background-color: #000 !important;
+}
+ul li{
+    padding:1rem;
+}
+
+ul li a{
+    color: #000 !important;
+}
+
+
+table.table-dark tr{
+    text-align:center;
+    color:black;
+    background:#fff;
+}
+.table-dark td{
+    border:none;
+}
+tr.table-head{
+    background:#000 !important;
+    color:#fff !important;
+}
+
+footer{
+    margin-top:5em;
+}
